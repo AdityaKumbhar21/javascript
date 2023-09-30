@@ -26,3 +26,17 @@ console.log(typeof stringScore);
 console.log(stringScore);
 
 // 199 -> "199"
+
+// Operations
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**3); // This is used for power 2 raised to power 3
+// console.log(2/2);
+// console.log(2%2)
+
+console.log("1"+2); // will consider as String
+console.log(1 + "2"); // will consider as String
+console.log("1" + 2 + 2); // will consider as String
+console.log(1 + 2 + "2"); // 32
