@@ -1,0 +1,10 @@
+Javascript is a dynamically typed language as we have no need to declare datatype before declaring the variable.
+
+Datatypes: 
+based on how data is stored in memory it is categorized in two types
+
+Primitive :
+String,Number,Boolean,null, undefined, Symbol,BigInt
+
+Non-Primitive:
+Array,Objects,Functions
