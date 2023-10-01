@@ -8,3 +8,14 @@ String,Number,Boolean,null, undefined, Symbol,BigInt
 
 Non-Primitive:
 Array,Objects,Functions
+
+*******************************Memory********************
+
+Stack (Primitive):
+it gives the copy of the value not the actual value
+
+Heap(Non-Primitive):
+It gives refrence of the original value,so as we change value original value gets affected
+
+
+
