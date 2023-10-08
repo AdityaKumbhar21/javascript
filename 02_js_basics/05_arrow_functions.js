@@ -44,4 +44,27 @@ const user = {
 
 const addTwo = (num1,num2) => num1 +num2
 
-console.log(addTwo(3,2));
+// console.log(addTwo(3,2));
+
+// IIFE
+// Immediately Invoked Function Expression
+
+// There may be pollution inside function due to global variables to avoid that pollution we use iife, it executes the function immediately after its declaration we don't need to call it explicitly
+
+// To declare iife
+    // named iife
+(function newOne() {
+    console.log("Welcome");
+})(); // semicolon should be added as the iife doesn't know where to stop
+
+// iife using arrow function
+
+( () =>{
+    console.log("Welcome User");
+} )();
+
+
+// we can also add parameters to iife
+( (name) =>{
+    console.log(`Welcome ${name}`);
+})("Aditya");
