@@ -1,0 +1,47 @@
+
+Scopes 
+
+Scope:
+    {}
+
+Local scope:
+    Local scope also known as block scope is the scope in a block like function,conditional,loops
+the variables declared in the block scope are accessible only in the block
+
+e.g:
+    if(true){
+        let score = 10
+        const score2 = 100
+    }
+    console.log(score) // this will give an error as the scope of score is only in the if block
+    console.log(score2) // this will give an error as the scope of score2 is only in the if block
+
+Global Scope:
+    Global scope is where a variable declared can be accessible in the entire code
+e.g:
+// Here score and score2 are accessible inside and outside a if block as the are declared in global scope
+    let score = 10
+    const score2 = 100
+    if(true){
+    console.log(score) 
+    console.log(score2)
+    }
+
+
+More Topics in scope
+
+function One()
+{
+    let userName = "Aditya"
+
+    function Two(){
+        let userLastName = "Kumbhar"
+        console.log(`${userName} ${userLastName}`)
+        // Here username is acccessible to function Two() as it is declared in function One()
+    }
+    // Here userLastName will not be accessible as the scope userLastName is in the function Two() only
+    // console.log(`${userName} ${userLastName}`)
+    Two()
+}
+
+One()
