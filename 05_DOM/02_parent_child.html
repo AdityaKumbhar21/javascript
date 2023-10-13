@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <!-- a comment -->
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+</body>
+
+<script>
+    // to select the parent
+    let parent = document.querySelector(".parent")
+    // console.log(parent);
+
+    // to select the children
+    // console.log(parent.children);
+    // will give an HTML collection with all the childrens of the parent
+
+    // console.log(parent.children[0]); // will give monday as it is the 
+
+    // for (let index = 0; index < parent.children.length; index++) {
+    //      console.log(parent.children[index].innerHTML);
+    //      // we can also change css
+    //      parent.children[index].style.color = "red"
+    // }
+
+    // to get the first child
+    // console.log(parent.firstElementChild);
+    // to get the last child
+    // console.log(parent.lastElementChild);
+
+        // To get the parent of the child
+        let dayOne = document.querySelector(".day")
+        // console.log(dayOne.parentElement);
+
+        //  To get the all child nodes
+        console.log(parent.childNodes);
+        // will get a node list with all the elements of the parent
+        // this includes new line comment
+
+</script>
+</html>
