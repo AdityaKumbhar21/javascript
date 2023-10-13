@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Remove elements</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Languages List:</h2>
+    <ul class="languages-list">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        let li = document.createElement("li")
+        li.innerHTML = langName
+        document.querySelector(".languages-list").appendChild(li)
+        
+    }
+
+    addLanguage("Java")
+    addLanguage("Python")
+
+    // optimized function 
+    function addOptiLanguage(langName) {
+        let li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".languages-list").appendChild(li)
+    }
+    addOptiLanguage("CPP")
+
+    // Editing DOM elements
+    // first method
+    let secLang = document.querySelector("li:nth-child(2)")
+    // secLang.innerHTML = "Ruby"  // not so optimized approch
+    //  optimized approach
+    let reLi = document.createElement("li")
+    reLi.textContent  = "Ruby"
+    secLang.replaceWith(reLi)
+
+    // 2nd Method
+    let lastLang = document.querySelector("li:last-child")
+    lastLang.outerHTML = "<li>Swift</li>" // using outer HTML we have to also give html tags
+    // not preferable
+
+    // removing elements
+    let firstLang = document.querySelector("li:first-child")
+    firstLang.remove()
+
+
+</script>
+</html>
