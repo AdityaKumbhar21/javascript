@@ -1,0 +1,23 @@
+Event Object
+
+type-> describes the type of event e.g mouseEvent,Keyboard event
+
+timestamp -> returns the time in milliseconds on ehich event created
+
+defaultPrevented -> the boolean value that is to prevent default operation or not of an event like a link or submiting a form
+
+target -> specifies the target element on which the event has occured
+
+toElement -> 
+
+srcElement -> (DEPRECATED) same as target
+
+currentTarget -> represents the element to which the event handler is attached. This will not always be the same as the element on which the event was fired, because the event may have fired on a descendant of the element with the handler, and then bubbled up to the element with the handler.
+
+clientX  and clientY -> specifies the cordinates of the mouse where it is in the application
+
+screenX and screenY ->  specifies the cordinates of mouse pointer in the global (screen) cordinates.
+
+altkey -> boolean property whether the altkey was pressed or not
+
+shiftkey -> boolean property whether the shiftkey was pressed or not
