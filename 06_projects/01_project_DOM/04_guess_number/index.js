@@ -10,6 +10,7 @@ let submit = document.querySelector("#subt")
 let userGuesses = document.querySelector(".guesses")
 let remainGuess = document.querySelector(".lastResult")
 let hint = document.querySelector(".lowOrHi")
+let resultParas = document.querySelector(".resultParas")
 
 let p = document.createElement("p")
 
@@ -43,6 +44,7 @@ function validateGuess(guess) {
         if(remainingGuess>10){
             displayGuess(guess)
             showMessage(`Game Over. The Number was ${randomNum}`)
+            endGame()
         }else{
             displayGuess(guess)
             checkAnswer(guess)
@@ -76,3 +78,28 @@ function showMessage(message) {
     hint.innerHTML = `<h2>${message}</h2>`
 }
 
+function newGame() {
+   let newBtn = document.querySelector("#newGame")
+   newBtn.addEventListener('click',(e)=>{
+    userInput.value = ''
+    randomNum = Math.floor(Math.random() * (max - min) + min);
+    remainingGuess = 1
+    prevGuess = []
+    remainGuess.innerHTML  = `${11-remainingGuess}`
+    userGuesses.innerHTML = ''
+    userInput.removeAttribute('disabled')
+    resultParas.removeChild(p)
+    playGame = true;
+   })
+}
+
+
+function endGame() {
+    userInput.value = ''
+    userInput.setAttribute('disabled','')
+    p.classList.add("button")
+    p.innerHTML = `<h2 id="newGame">Start a new Game</h2>`
+    resultParas.appendChild(p);
+    playGame = false;
+    newGame();
+}
