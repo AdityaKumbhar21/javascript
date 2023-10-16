@@ -68,7 +68,7 @@ function checkAnswer(guess) {
 
 function displayGuess(guess) {
     userInput.value = ''
-    userGuesses.innerHTML = `${prevGuess}, `
+    userGuesses.innerHTML += `${guess}, `
     remainingGuess++;
     remainGuess.innerHTML  = `${11-remainingGuess}`
 
