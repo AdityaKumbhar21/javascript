@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout tutorial</title>
+</head>
+<body>
+    <h1>Set Timeout</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Set timeout function is used to perform a task after a specified task
+
+    let sayHello = ()=>{
+        console.log("Hello");
+    }
+setTimeout(sayHello,2000) // time should be given in msec here it is 2 sec
+// we can also directly pass the function in parameter
+
+// here hello will be printed after 2 seconds
+
+// we can also control the timeout 
+// stopping the program to change h1 if stop button pressed before 3 seconds
+// we can use clearTimeout()
+
+let changeH1 = ()=>{
+    document.querySelector("h1").innerHTML = "No set Timeout"
+}
+let myHeading = setTimeout(changeH1,3000)
+document.querySelector("#stop").addEventListener('click',()=>{
+    clearTimeout(myHeading)
+})
+
+
+
+</script>
+</html>

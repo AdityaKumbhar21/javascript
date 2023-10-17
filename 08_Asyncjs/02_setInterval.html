@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout tutorial</title>
+</head>
+<body>
+    <h1>Set Interval</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Set interval is used to perform the task repeatedly until it is stopped
+
+    let sayHello = ()=>{
+        console.log("Hello",Date.now());
+    }
+// time should be given in msec here it is 2 sec
+// Hello will be printed repeatedly after each 2 seconds
+
+
+// Task ->
+// to start printing hello when start button is cliked and stopped when stop button is clicked
+
+let myHeading;
+document.querySelector("#start").addEventListener('click',()=>{
+    myHeading = setInterval(sayHello,2000) 
+})
+
+
+document.querySelector("#stop").addEventListener('click',()=>{
+    clearInterval(myHeading)
+})
+
+
+
+</script>
+</html>
