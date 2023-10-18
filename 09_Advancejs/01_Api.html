@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img   alt="Profile" style="width:150px">
+        <div class="container">
+        </div>
+     </div>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET',requestURL)
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data);
+            let profile_image = data.avatar_url;
+            document.querySelector("img").src = profile_image
+            let followerCount = data.followers
+            let name  = data.login
+            document.querySelector(".container").innerHTML = `<h4><b>Name: ${name}<b>
+                                                            <p> Followers: ${followerCount}<p>`
+        }
+    }
+    xhr.send()
+</script>
+</html>
