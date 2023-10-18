@@ -2,7 +2,7 @@ Event Object
 
 type-> describes the type of event e.g mouseEvent,Keyboard event
 
-timestamp -> returns the time in milliseconds on ehich event created
+timestamp -> returns the time in milliseconds on which event created
 
 defaultPrevented -> the boolean value that is to prevent default operation or not of an event like a link or submiting a form
 
